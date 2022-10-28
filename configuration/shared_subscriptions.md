@@ -16,7 +16,7 @@ When subscribing to a shared subscription using command line tools remember to q
 
 ## Configuration
 
-Currently four message distribution policies for shared subscriptions are supported: `prefer_local`, `random`, `local_only` and `prefer_online_before_local`. Under the `random` policy messages will be published to a random member of the shared subscription, if any exist. Under the `prefer_local` policy messages will be delivered to a random node-local member of the shared subscription, if none exist, the message will be delivered to a random member of the shared subscription on a remote cluster node. The `prefer_online_before_local` works similarly to `prefer_local`, but tries to route to an online member of the shared subscription. Under the `local_only` policy message will be delivered to a random node-local member of the shared subscription.
+Currently four message distribution policies for shared subscriptions are supported: `prefer_local`, `random`, `local_only` and `prefer_online_before_local`. Under the `random` policy messages will be published to a random member of the shared subscription, if any exist. Under the `prefer_local` policy messages will be delivered to a random node-local member of the shared subscription, if none exist, the message will be delivered to a random member of the shared subscription on a remote cluster node. The `prefer_online_before_local` policy works similar to `prefer_local`, but will look for an online subscriber on a non-local node, if there are only offline subscribers on the local one. Under the `local_only` policy message will be delivered to a random node-local member of the shared subscription.
 
 ```text
 shared_subscription_policy = prefer_local
