@@ -527,7 +527,7 @@ Webhook example payload:
 
 ```javascript
 {
-    "username": "username",
+    "username": "", 
     "mountpoint": "",
     "client_id": "client-id",
     "properties": {
@@ -537,7 +537,7 @@ Webhook example payload:
 }
 ```
 
-Note, as the authentication data is binary data it is base64 encoded.
+Note, as the authentication data is binary data it is base64 encoded and the username is nullified.
 
 A minimal response indicating the authentication was successful looks like:
 
@@ -547,13 +547,13 @@ A minimal response indicating the authentication was successful looks like:
       "p_authentication_data": "QVVUSF9EQVRBMQ==",
       "p_authentication_method": "AUTH_METHOD"
     }
-    "reason_code": 0
+    "reason_code": "success"
   },
   "result": "ok"
 }
 ```
 
-If authentication were to continue for another round a reason code with value 24 \(Continue Authentication\) should be returned instead. See also the relevant [section](http://docs.oasis-open.org/mqtt/mqtt/v5.0/cs02/mqtt-v5.0-cs02.html#_Toc514345528) in the MQTT 5.0 specification.
+If authentication were to continue for another round a reason code with continue_authentication should be returned instead. The server shall not change the authentication method. See also the relevant [section](http://docs.oasis-open.org/mqtt/mqtt/v5.0/cs02/mqtt-v5.0-cs02.html#_Toc514345528) in the MQTT 5.0 specification.
 
 ### auth\_on\_subscribe\_m5
 
