@@ -4,7 +4,7 @@ description: Topics Tree and Performance hints
 
 # Topic Tree
 In MQTT, a well-designed and concise topic tree is essential. A poorly organized topic tree, that is overly complex, or lacking in structure 
-makes it difficult to manage and scale an MQTT network.
+makes it difficult to manage and scale.
 
 Therefore, it is important to invest time and effort in upfront design of the topic tree to ensure that it is clear, concise, 
 and structured in a logical and consistent manner. This can involve defining the topic levels, naming conventions, and hierarchy of topics 
