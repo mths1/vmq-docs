@@ -41,3 +41,20 @@ Start the VerneMQ service on the upgraded node and monitor the logs for any erro
 After the upgraded node is operational, thoroughly test its functionality and perform any necessary validation to ensure that it's working as expected. Test message delivery, subscriptions, and any other features specific to your use case. Monitor the cluster for any anomalies or unexpected behavior.
 
 
+## Upgrade process (Simultaneous upgrade or single node upgrade)
+To upgrade a all nodes simultanously or a single node VerneMQ cluster, you can follow these steps:
+
+**Backup your data**: Before proceeding with the upgrade, it's essential to create a backup of your VerneMQ data and configuration. This ensures that you can restore your cluster to a functional state if any issues arise during the upgrade. Make sure to have a reliable backup strategy in place.
+
+**Check compatibility**: Verify the compatibility of the new VerneMQ version with your current setup. Review the release notes and documentation to understand any specific requirements or changes between versions. 
+
+**Stop VerneMQ**: Stop the VerneMQ service running on the node you want to upgrade. 
+
+**Install the new version**:
+Download and install the new version of VerneMQ on the node. Ensure that you use the correct package or binary for your platform, if you use the precompiled packages.
+
+**Retain persistent/offline session data**: If you need to preserve persistent sessions and stored data, it's crucial to keep the existing data folder intact during the upgrade process. This ensures that the upgraded node can access the necessary data to maintain session continuity. It is highly important to test this step throughtly and have a backup in case you need to revert.
+
+**Reform Cluster:** In case you deleted to data folder for a clean installation you need to reform the cluster.
+
+**Start VerneMQ**: Start the upgraded VerneMQ instance on the node(s). Monitor the logs for any errors or warnings during the startup process. Verify that VerneMQ is running smoothly and functioning as expected.
