@@ -20,7 +20,7 @@ Determine your upgrade strategy based on your particular requirements and the de
 
 ## Upgrade process (Rolling Upgrade)
 **Leave the cluster and migrate clients:**
-First, you need to migrate all clients away from the node you want to upgrade. Use the VerneMQ's vmq-admin cluster leave functionality, which can force migrate client queues to other nodes or await natural migration through client reconnects. This step ensures that all clients are redirected to other nodes in the cluster before proceeding. Please follow the cluster leave functionality as described here. 
+First, you need to migrate all clients away from the node you want to upgrade. Use the VerneMQ's vmq-admin cluster leave functionality, which can force migrate client queues to other nodes or await natural migration through client reconnects. This step ensures that all clients are redirected to other nodes in the cluster before proceeding. Please follow the cluster leave functionality as described in [Cluster Leave, Case A: Make a live node leave](../clustering/introduction.md) 
 
 **Prepare the node:**
 Stop the VerneMQ service on the node you want to upgrade. Ensure that there are no active client connections to the node and that it is in a stable state before proceeding.
