@@ -38,8 +38,13 @@ Erlang applications such as VerneMQ, built for real-time and low-latency scenari
 
 There is currently no consensus on if its preferable to run a server with our without swap space. Riak recommends to disable swap space, while RabbidMQ highly recommends enabling it.  
 
+{% hint style="info" %} Unless, there is an explicit reason to disable swap space, the recommendation is to turn swap on and monitor its usage. The OS should not use swap space on a properly sized system.{% endhint %}
+
 
 ### Transparent Huge Pages (THP)
 Transparent Huge Pages (THP) is a Linux kernel feature designed to optimize memory management by consolidating standard memory pages into larger pages, reducing memory overhead and improving memory access speed for data-intensive applications. The kernel manages page conversion based on memory usage patterns. While THP can enhance performance in some cases, its impact varies depending on the workload, and it might introduce overhead for latency-sensitive applications due to potential memory fragmentation and page migration delays. 
 
 Riak suggests to disable THP, as well as Redis, MongoDB, RabbitMQ and Kafka. 
+
+{% hint style="info" %} The recommendation is to disable THB{% endhint %}
+
