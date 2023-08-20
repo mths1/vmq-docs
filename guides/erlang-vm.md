@@ -6,6 +6,8 @@ the operational dynamics of a VerneMQ node during runtime. In the following we b
 and CPU tuning, as well as some OS configurations that have a direct impact on them.
 
 ## CPU 
+### Scheduler Busy Waiting
+Scheduler Busy Waiting keeps schedulers awake for a specified period of time, if there is no work to be done, before going to sleep. Performance can improve if this busy waiting is disabled "+sbwt none". 
 
 ## Memory 
 In the following we will briefly discuss memory allocation, as well swap space and transparent huge pages (THP).
