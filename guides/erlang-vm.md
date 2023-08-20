@@ -18,11 +18,16 @@ The parameters governing carrier size, block dimensions, memory allocation strat
 under the umbrella of allocator settings.
 
 Memory fragmentation in VerneMQ varies based on the chosen allocator settings and the nature of the workload. Identifying the optimal 
-configuration for your specific workload demands a blend of experimentation, metric-driven assessments, 
-and a trial-and-error methodology. Importantly, it's crucial to recognize that a certain level of fragmentation is inherent to the process.
+configuration for a specific workload needs experimentation and metric-driven assessments.
+
+Erlang documentation:
+* http://erlang.org/doc/man/erts_alloc.html
 
 ### Swap space 
 Erlang applications such as VerneMQ, built for real-time and low-latency scenarios, are designed to take advantage of physical RAM. Swapping data between RAM and disk is significantly slower than accessing data directly from memory. This can lead to noticeable slowdowns and increased response times. Therefore, utilizing swap space for Erlang applications is generally not recommended. Nonetheless, swap space can prevent an application from crashing due to running out of memory. Swap space can serve as a safety net, in case the garbage collector needs too much memory for a brief period of time. It is recommended to monitor the swap space usage and in case it is non-zero to investigate. Especially, in case you experience performance degradation.
+
+There is currently no consensus on if its preferable to run a server with our without swap space. Riak recommends to disable swap space, while RabbidMQ highly recommends enabling it.  
+
 
 ### Transparent Huge Pages (THP)
 
