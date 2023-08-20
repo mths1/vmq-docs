@@ -23,6 +23,15 @@ configuration for a specific workload needs experimentation and metric-driven as
 Erlang documentation:
 * http://erlang.org/doc/man/erts_alloc.html
 
+VerneMQ currently does not suggest a specific memory allocation strategy. In case you are not satisfied with the default, you might want to use
+'''
++MBas ageffcbf 
++MHas ageffcbf 
++MBlmbcs 512 
++MHlmbcs 512 
++MMmcs 30
+'''
+
 ### Swap space 
 Erlang applications such as VerneMQ, built for real-time and low-latency scenarios, are designed to take advantage of physical RAM. Swapping data between RAM and disk is significantly slower than accessing data directly from memory. This can lead to noticeable slowdowns and increased response times. Therefore, utilizing swap space for Erlang applications is generally not recommended. Nonetheless, swap space can prevent an application from crashing due to running out of memory. Swap space can serve as a safety net, in case the garbage collector needs too much memory for a brief period of time. It is recommended to monitor the swap space usage and in case it is non-zero to investigate. Especially, in case you experience performance degradation.
 
