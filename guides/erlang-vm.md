@@ -23,7 +23,7 @@ configuration for a specific workload needs experimentation and metric-driven as
 Erlang documentation:
 * http://erlang.org/doc/man/erts_alloc.html
 
-VerneMQ currently does not suggest a specific memory allocation strategy. In case you are not satisfied with the default, you might want to try
+VerneMQ currently does not suggest a specific memory allocation strategy. In case you are not satisfied with the system default, you might want to try the following which is known to work well with Erlang-based brokers.
 
 ```text
 +MBas ageffcbf 
