@@ -30,7 +30,6 @@ There is currently no consensus on if its preferable to run a server with our wi
 
 
 ### Transparent Huge Pages (THP)
+Transparent Huge Pages (THP) is a Linux kernel feature designed to optimize memory management by consolidating standard memory pages into larger pages, reducing memory overhead and improving memory access speed for data-intensive applications. The kernel manages page conversion based on memory usage patterns. While THP can enhance performance in some cases, its impact varies depending on the workload, and it might introduce overhead for latency-sensitive applications due to potential memory fragmentation and page migration delays. 
 
-
-
-
+Riak suggests to disable THP, as well as Redis, MongoDB, RabbitMQ and Kafka. 
