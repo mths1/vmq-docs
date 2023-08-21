@@ -9,6 +9,12 @@ and CPU tuning, as well as some OS configurations that have a direct impact on t
 ### Scheduler Busy Waiting
 Scheduler Busy Waiting keeps schedulers awake for a specified period of time, if there is no work to be done, before going to sleep. Performance can improve if this busy waiting is disabled "+sbwt none". 
 
+```text
++sbwt none
+```
+
+Typically, Erlang-based brokers suggest to disable busy waiting. 
+
 ## Memory 
 In the following we will briefly discuss memory allocation, as well swap space and transparent huge pages (THP).
 
